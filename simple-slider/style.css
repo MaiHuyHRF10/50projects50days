@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: white;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  position: relative;
+  margin: 18px auto;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  background-color: #3498db;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+
+  cursor: pointer;
+  font-family: inherit;
+  width: 50px;
+  height: 50px;
+
+  font-size: 20px;
+}
+
+.btn.prev {
+  left: -25px;
+}
+
+.btn.next {
+  right: -25px;
+}
+
+.btn:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.slider-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+
+  z-index: 10;
+}
+.slider-dots li {
+  margin: 0 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 100rem;
+
+  background-color: #999;
+  cursor: pointer;
+  transition: background-color 0.25s linear;
+}
+.slider-dots li.active {
+  background-color: white;
+}
+
+.slider-container {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-main {
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+
+.slider-item {
+  height: 100%;
+  width: 100%;
+  flex: 0;
+  transition: flex 0.3s linear;
+}
+
+.slider-item.active {
+  flex: 1;
+}
+
+.slider-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
